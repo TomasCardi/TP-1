@@ -17,12 +17,29 @@
                 <li><a href="projects.html">Proyectos</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
+            
         </nav>
     </header>
 
-    <section id="home">
-        <img src="TP-1.html/imagen/kuni.jpeg" alt="Foto de perfil">
-        <p>Bienvenido a mi portafolio. Aquí encontrarás información sobre mis habilidades y proyectos.</p>
+    <section>
+        <div class="img-container">
+            <img src="TP-1.html/imagen/kuni.jpeg" alt="Imagen centrada">
+        </div>
+    
+        <div class="formulario">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required>
+                
+                <label>Email:</label>
+                <input type="email" name="email" required>
+                
+                <label>Mensaje:</label>
+                <textarea name="mensaje" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </section>
 
     <footer>
