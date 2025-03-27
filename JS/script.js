@@ -1,15 +1,21 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("dark-mode-toggle");
+    const body = document.body;
 
-    if (isDarkMode) {
-        document.body.classList.add("dark-mode");
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
     }
 
-    darkModeToggle.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+       
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
     });
 });
 
@@ -24,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (nombre === "" || email === "" || mensaje === "") {
             alert("Por favor, completa todos los campos antes de enviar.");
-            event.preventDefault(); // Detiene el envío del formulario
+            event.preventDefault(); 
         }
     });
 });
